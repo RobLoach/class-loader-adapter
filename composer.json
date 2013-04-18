@@ -1,0 +1,36 @@
+{
+    "name": "robloach/class-loader-adapter",
+    "description": "The Class Loader Adapter provides a common interface to interact with a number of different class loaders.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Rob Loach",
+            "homepage": "http://robloach.net"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3"
+    },
+    "autoload": {
+        "psr-0": {
+            "RobLoach\\ClassLoaderAdapter\\": ""
+        }
+    },
+    "target-dir": "RobLoach/ClassLoaderAdapter",
+    "suggest": {
+        "symfony/classloader": "Allows interaction with the Symfony ClassLoaders",
+        "composer/composer": "Allows interaction with the Composer ClassLoader"
+    },
+    "require-dev": {
+        "symfony/class-loader": "2.2.*",
+        "phpunit/phpunit": "3.7.*",
+        "composer/composer": "1.*"
+    },
+    "archive": {
+        "exclude": [
+            "Tests",
+            "phpunit.xml.dist"
+        ]
+    },
+    "minimum-stability": "alpha"
+}
