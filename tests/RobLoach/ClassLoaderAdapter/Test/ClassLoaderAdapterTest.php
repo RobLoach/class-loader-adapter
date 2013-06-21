@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\Component\ClassLoader\Tests;
+namespace RobLoach\ClassLoaderAdapter\Test;
 
 use Composer\Autoload\ClassLoader\ClassLoader;
 

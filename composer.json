@@ -13,22 +13,21 @@
     },
     "autoload": {
         "psr-0": {
-            "RobLoach\\ClassLoaderAdapter\\": ""
+            "RobLoach\\ClassLoaderAdapter\\": "src/"
         }
     },
-    "target-dir": "RobLoach/ClassLoaderAdapter",
     "suggest": {
         "symfony/classloader": "Allows interaction with the Symfony ClassLoaders",
         "composer/composer": "Allows interaction with the Composer ClassLoader"
     },
     "require-dev": {
-        "symfony/class-loader": "2.2.*",
-        "phpunit/phpunit": "3.7.*",
+        "symfony/class-loader": "2.*",
+        "phpunit/phpunit": "3.*",
         "composer/composer": "1.*"
     },
     "archive": {
         "exclude": [
-            "Tests",
+            "tests",
             "phpunit.xml.dist"
         ]
     },
