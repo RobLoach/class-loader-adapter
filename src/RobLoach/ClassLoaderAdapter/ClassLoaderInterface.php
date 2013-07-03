@@ -11,6 +11,11 @@
 
 namespace RobLoach\ClassLoaderAdapter;
 
+/**
+ * Interface to allow switching between different third-party class loaders.
+ *
+ * @author Rob Loach (http://robloach.net)
+ */
 interface ClassLoaderInterface
 {
     /**

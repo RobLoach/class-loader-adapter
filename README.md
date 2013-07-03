@@ -38,7 +38,8 @@ $loader = new RobLoach\ClassLoaderAdapter\Composer\ClassLoader();
 ```
 
 Since all of the Class Loader Adapter loaders use the same
-*ClassLoaderInterface*, they all use the same API.
+[ClassLoaderInterface](src/RobLoach/ClassLoaderAdapter/ClassLoaderInterface.php)
+, you can interact with them all the same way.
 
 ```php
 // Add a namespace prefix.
@@ -53,5 +54,5 @@ $loader->register();
 ```
 
 Although the interface is in place, class loader functionality and support
-slightly differs from class loader to class loader. Take note of that when
-switching between class loaders.
+slightly differs from class loader to class loader. Take note of this when
+switching between the class loaders.

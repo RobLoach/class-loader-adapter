@@ -1,6 +1,7 @@
 {
     "name": "robloach/class-loader-adapter",
     "description": "The Class Loader Adapter provides a common interface to interact with a number of different class loaders.",
+    "homepage": "http://github.com/robloach/class-loader-adapter",
     "license": "MIT",
     "authors": [
         {
@@ -8,22 +9,25 @@
             "homepage": "http://robloach.net"
         }
     ],
+    "support": {
+        "issues": "http://github.com/robloach/class-loader-adapter/issues"
+    },
     "require": {
         "php": ">=5.3.3"
-    },
-    "autoload": {
-        "psr-0": {
-            "RobLoach\\ClassLoaderAdapter\\": "src/"
-        }
-    },
-    "suggest": {
-        "symfony/classloader": "Allows interaction with the Symfony ClassLoaders",
-        "composer/composer": "Allows interaction with the Composer ClassLoader"
     },
     "require-dev": {
         "symfony/class-loader": "2.*",
         "phpunit/phpunit": "3.*",
         "composer/composer": "1.*"
+    },
+    "suggest": {
+        "symfony/classloader": "Allows interaction with the Symfony ClassLoaders",
+        "composer/composer": "Allows interaction with the Composer ClassLoader"
+    },
+    "autoload": {
+        "psr-0": {
+            "RobLoach\\ClassLoaderAdapter\\": "src/"
+        }
     },
     "archive": {
         "exclude": [
