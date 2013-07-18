@@ -22,6 +22,27 @@ use Symfony\Component\ClassLoader\ClassLoader as BaseClassLoader;
 class ClassLoader extends BaseClassLoader implements ClassLoaderInterface
 {
     /**
+     * Registers a set of classes, merging with any others previously set.
+     *
+     * @param string       $prefix  The classes prefix
+     * @param array|string $paths   The location(s) of the classes
+     */
+    public function add($prefix, $paths)
+    {
+        $this->addPrefix($prefix, $paths);
+    }
+
+    /**
+     * Add multiple sets of classes.
+     *
+     * @param array $prefixes Prefixes to add.
+     */
+    public function addMultiple(array $prefixes)
+    {
+        $this->addPrefixes($prefixes);
+    }
+
+    /**
      * The Symfony ClassLoader does not support class maps.
      */
     public function addClassMap(array $classMap)

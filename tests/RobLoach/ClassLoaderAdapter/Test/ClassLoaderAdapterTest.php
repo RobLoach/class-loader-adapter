@@ -25,9 +25,9 @@ class ClassLoaderAdapterTest extends \PHPUnit_Framework_TestCase
     {
         // Attempt adding the prefix to the loader.
         $loader = new $class();
-        $loader->addPrefix('Foo', __DIR__.DIRECTORY_SEPARATOR.'Fixtures');
-        $loader->addPrefix('Bar', __DIR__.DIRECTORY_SEPARATOR.'Fixtures');
-        $loader->addPrefix('Bas', __DIR__.DIRECTORY_SEPARATOR.'Fixtures');
+        $loader->add('Foo', __DIR__.DIRECTORY_SEPARATOR.'Fixtures');
+        $loader->add('Bar', __DIR__.DIRECTORY_SEPARATOR.'Fixtures');
+        $loader->add('Bas', __DIR__.DIRECTORY_SEPARATOR.'Fixtures');
 
         // Retrieve the prefixes and see if the namespaces are available.
         $prefixes = $loader->getPrefixes();
@@ -49,7 +49,7 @@ class ClassLoaderAdapterTest extends \PHPUnit_Framework_TestCase
           'Bar' => __DIR__.DIRECTORY_SEPARATOR.'Fixtures',
           'Bas' => __DIR__.DIRECTORY_SEPARATOR.'Fixtures',
         );
-        $loader->addPrefixes($prefixes);
+        $loader->addMultiple($prefixes);
 
         // Retrieve the prefixes and see if the namespaces are available.
         $prefixes = $loader->getPrefixes();
@@ -66,8 +66,8 @@ class ClassLoaderAdapterTest extends \PHPUnit_Framework_TestCase
     {
         // Add each prefix to the class loader.
         $loader = new $class();
-        $loader->addPrefix("Foo{$index}\\", __DIR__.DIRECTORY_SEPARATOR.'Fixtures');
-        $loader->addPrefix("Pearlike{$index}_", __DIR__.DIRECTORY_SEPARATOR.'Fixtures');
+        $loader->add("Foo{$index}\\", __DIR__.DIRECTORY_SEPARATOR.'Fixtures');
+        $loader->add("Pearlike{$index}_", __DIR__.DIRECTORY_SEPARATOR.'Fixtures');
 
         // Put together an array of classes to attempt loading from.
         $attempts = array(
@@ -89,7 +89,7 @@ class ClassLoaderAdapterTest extends \PHPUnit_Framework_TestCase
     {
         // Add each prefix to the class loader.
         $loader = new $class();
-        $loader->addPrefixes(array(
+        $loader->addMultiple(array(
             "Foo{$index}\\" => __DIR__.DIRECTORY_SEPARATOR.'Fixtures',
             "Pearlike{$index}_" => __DIR__.DIRECTORY_SEPARATOR.'Fixtures',
         ));

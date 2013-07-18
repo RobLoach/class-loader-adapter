@@ -24,14 +24,14 @@ interface ClassLoaderInterface
      * @param string       $prefix  The classes prefix
      * @param array|string $paths   The location(s) of the classes
      */
-    public function addPrefix($prefix, $paths);
+    public function add($prefix, $paths);
 
     /**
-     * Adds prefixes.
+     * Add multiple sets of classes.
      *
      * @param array $prefixes Prefixes to add.
      */
-    public function addPrefixes(array $prefixes);
+    public function addMultiple(array $prefixes);
 
     /**
      * Retrieves the array of Prefixes that have been registered.

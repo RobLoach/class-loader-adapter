@@ -62,7 +62,7 @@ class MapClassLoader extends BaseClassLoader implements ClassLoaderInterface
     /**
      * Prefixes are not supported by MapClassLoader.
      */
-    public function addPrefix($prefix, $paths)
+    public function add($prefix, $paths)
     {
         throw new \RuntimeException('Symfony MapClassLoader does not support prefixes.');
     }
@@ -70,7 +70,7 @@ class MapClassLoader extends BaseClassLoader implements ClassLoaderInterface
     /**
      * Prefixes are not supported by MapClassLoader.
      */
-    public function addPrefixes(array $prefixes)
+    public function addMultiple(array $prefixes)
     {
         throw new \RuntimeException('Symfony MapClassLoader does not support prefixes.');
     }

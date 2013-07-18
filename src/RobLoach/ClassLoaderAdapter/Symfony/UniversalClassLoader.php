@@ -43,7 +43,7 @@ class UniversalClassLoader extends BaseClassLoader implements ClassLoaderInterfa
      * UniversalClassLoader differentiates between PEAR-like and PHP namespaces.
      * This will make it so that they act the same.
      */
-    public function addPrefix($prefix, $paths)
+    public function add($prefix, $paths)
     {
         $is_namespace = (strpos($prefix, '\\') !== FALSE) && (substr($prefix, -1) !== '_');
         if ($is_namespace) {
@@ -57,10 +57,10 @@ class UniversalClassLoader extends BaseClassLoader implements ClassLoaderInterfa
     /**
      * Prefixes are not supported by MapClassLoader.
      */
-    public function addPrefixes(array $prefixes)
+    public function addMultiple(array $prefixes)
     {
         foreach ($prefixes as $prefix => $path) {
-            $this->addPrefix($prefix, $path);
+            $this->add($prefix, $path);
         }
     }
 
