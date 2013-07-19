@@ -19,7 +19,7 @@ use Composer\Autoload\ClassLoader\ClassLoader;
 class ClassLoaderAdapterTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @dataProvider providerClassLoaderPrefixClasses
+     * @dataProvider providerClassLoaderGetPrefixesClasses
      */
     public function testAddPrefix($class)
     {
@@ -38,7 +38,7 @@ class ClassLoaderAdapterTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @dataProvider providerClassLoaderPrefixClasses
+     * @dataProvider providerClassLoaderGetPrefixesClasses
      */
     public function testAddPrefixes($class)
     {
@@ -135,6 +135,22 @@ class ClassLoaderAdapterTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Data provider to return class loaders that support prefixes,
+     * and that support getPrefixes().
+     */
+    public function providerClassLoaderGetPrefixesClasses() {
+        // Provide each test with a index number so it can change accordingly.
+        $index = 1;
+
+        // Give each test the class that needs testing.
+        $tests[] = array('RobLoach\\ClassLoaderAdapter\\Composer\\ClassLoader', $index++);
+        $tests[] = array('RobLoach\\ClassLoaderAdapter\\Symfony\\ClassLoader', $index++);
+        $tests[] = array('RobLoach\\ClassLoaderAdapter\\Symfony\\UniversalClassLoader', $index++);
+
+        return $tests;
+    }
+
+    /**
      * Data provider to return class loaders that support prefixes.
      */
     public function providerClassLoaderPrefixClasses() {
@@ -145,6 +161,8 @@ class ClassLoaderAdapterTest extends \PHPUnit_Framework_TestCase
         $tests[] = array('RobLoach\\ClassLoaderAdapter\\Composer\\ClassLoader', $index++);
         $tests[] = array('RobLoach\\ClassLoaderAdapter\\Symfony\\ClassLoader', $index++);
         $tests[] = array('RobLoach\\ClassLoaderAdapter\\Symfony\\UniversalClassLoader', $index++);
+        $tests[] = array('RobLoach\\ClassLoaderAdapter\\Krautoload\\PluggableClassLoader', $index++);
+        $tests[] = array('RobLoach\\ClassLoaderAdapter\\Krautoload\\PluggableNamespaceInspector', $index++);
 
         return $tests;
     }
@@ -159,6 +177,8 @@ class ClassLoaderAdapterTest extends \PHPUnit_Framework_TestCase
         // Give each test the class that needs testing.
         $tests[] = array('RobLoach\\ClassLoaderAdapter\\Composer\\ClassLoader', $index++);
         $tests[] = array('RobLoach\\ClassLoaderAdapter\\Symfony\\MapClassLoader', $index++);
+        $tests[] = array('RobLoach\\ClassLoaderAdapter\\Krautoload\\PluggableClassLoader', $index++);
+        $tests[] = array('RobLoach\\ClassLoaderAdapter\\Krautoload\\PluggableNamespaceInspector', $index++);
 
         return $tests;
     }
