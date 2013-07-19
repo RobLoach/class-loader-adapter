@@ -15,10 +15,17 @@
     "require": {
         "php": ">=5.3.3"
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/donquixote/krautoload"
+        }
+    ],
     "require-dev": {
         "symfony/class-loader": "2.*",
         "phpunit/phpunit": "3.*",
-        "composer/composer": "1.*"
+        "composer/composer": "1.*",
+        "donquixote/krautoload": "0.0.*@alpha"
     },
     "suggest": {
         "symfony/classloader": "Allows interaction with the Symfony ClassLoaders",
